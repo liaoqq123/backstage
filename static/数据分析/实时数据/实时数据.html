@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>数据显示</title>
+  <!-- 请勿在项目正式环境中引用该 layui.css 地址 -->
+  <link rel="stylesheet" href="/static/layui/css/layui.css" >
+</head>
+<body>
+<div style="margin: auto 10px 0" class="layui-tab layui-tab-brief">
+  <ul class="layui-tab-title">
+    <li class="layui-this">
+        <a href="/static/数据分析/实时数据/注册日志.html">注册日志</a>
+    </li>
+    <li><a href="/static/数据分析/实时数据/在线峰值.html">在线峰值</a></li>
+    <li><a href="/static/数据分析/实时数据/创建流失.html">创建流失</a></li>
+    <li><a href="/static/数据分析/实时数据/等级流失.html">等级流失</a></li>
+  </ul>
+  <div>
+        <iframe src="/static/数据分析/实时数据/注册日志.html" height=805px width="100%" id="main"></iframe>
+  </div>
+</div>
+
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.use('element', function (){
+        var element = layui.element;
+        var $ = layui.jquery;
+        $(document).ready(function(){
+            $("li>a").on('click', function (e){
+                e.preventDefault();
+                $('#main').attr("src",$(this).attr("href"));
+                console.log()
+            });
+        });
+    });
+</script>
+</body>
+</html>

@@ -9,7 +9,7 @@
 </head>
 <body>
 <div style="width: 320px; margin: 100px auto 0;">
-    <form class="layui-form" action="/login" method="post">
+    <form class="layui-form" action="/login" method="POST">
       <div class="demo-login-container">
         <div class="layui-form-item">
           <div class="layui-input-wrap">
@@ -39,7 +39,9 @@
 
 <script src="/static/layui/layui.js"></script>
 <script>
-
+    layui.use('form', function (){
+        var form = layui.form
+    })
 </script>
 </body>
 </html>

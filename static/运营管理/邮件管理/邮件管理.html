@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>邮件管理</title>
+  <!-- 请勿在项目正式环境中引用该 layui.css 地址 -->
+  <link rel="stylesheet" href="/static/layui/css/layui.css" >
+</head>
+<body>
+<div style="margin: auto 10px 0" class="layui-tab layui-tab-brief">
+  <ul class="layui-tab-title">
+    <li class="layui-this">
+        <a href="/static/数据分析/营收数据/每日注册.html">充值排行</a>
+    </li>
+    <li><a href="/static/数据分析/营收数据/注册留存.html">充值漏斗</a></li>
+    <li><a href="/static/数据分析/营收数据/充值注册总览.html">区间分析</a></li>
+    <li><a href="/static/数据分析/营收数据/区服数据总览.html">首充分析</a></li>
+    <li><a href="/static/数据分析/营收数据/日累计LTV总览.html">充值习惯</a></li>
+    <li><a href="/static/数据分析/营收数据/每日数据总览.html">日周月报</a></li>
+  </ul>
+  <div>
+        <iframe src="/static/数据分析/实时数据/注册日志.html" height=805px width="100%" id="main"></iframe>
+  </div>
+</div>
+
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.use('element', function (){
+        var element = layui.element;
+        var $ = layui.jquery;
+        $(document).ready(function(){
+            $("li>a").on('click', function (e){
+                e.preventDefault();
+                $('#main').attr("src",$(this).attr("href"));
+                console.log()
+            });
+        });
+    });
+</script>
+</body>
+</html>

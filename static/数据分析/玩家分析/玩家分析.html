@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>营收数据</title>
+  <!-- 请勿在项目正式环境中引用该 layui.css 地址 -->
+  <link rel="stylesheet" href="/static/layui/css/layui.css" >
+</head>
+<body>
+<div style="margin: auto 10px 0" class="layui-tab layui-tab-brief">
+  <ul class="layui-tab-title">
+    <li class="layui-this">
+        <a href="/static/数据分析/玩家分析/留存分析-新用户.html">留存分析-新用户</a>
+    </li>
+    <li><a href="/static/数据分析/玩家分析/留存分析-付费用户.html">留存分析-付费用户</a></li>
+    <li><a href="/static/数据分析/玩家分析/等级分布.html">等级分布</a></li>
+    <li><a href="/static/数据分析/玩家分析/等级分析.html">等级分析</a></li>
+    <li><a href="/static/数据分析/玩家分析/分钟流失.html">分钟流失</a></li>
+    <li><a href="/static/数据分析/玩家分析/行为分析.html">行为分析</a></li>
+    <li><a href="/static/数据分析/玩家分析/新手流失.html">新手流失</a></li>
+    <li><a href="/static/数据分析/玩家分析/在线时长.html">在线时长</a></li>
+    <li><a href="/static/数据分析/玩家分析/在线分析.html">在线分析</a></li>
+    <li><a href="/static/数据分析/玩家分析/属性分析.html">属性分析</a></li>
+    <li><a href="/static/数据分析/玩家分析/滚服分析.html">滚服分析</a></li>
+    <li><a href="/static/数据分析/玩家分析/回流分析.html">回流分析</a></li>
+    <li><a href="/static/数据分析/玩家分析/聊天分析.html">聊天分析</a></li>
+  </ul>
+  <div>
+        <iframe src="/static/数据分析/实时数据/注册日志.html" height=805px width="100%" id="main"></iframe>
+  </div>
+</div>
+
+<script src="/static/layui/layui.js"></script>
+<script>
+    layui.use('element', function (){
+        var element = layui.element;
+        var $ = layui.jquery;
+        $(document).ready(function(){
+            $("li>a").on('click', function (e){
+                e.preventDefault();
+                $('#main').attr("src",$(this).attr("href"));
+                console.log()
+            });
+        });
+    });
+</script>
+</body>
+</html>

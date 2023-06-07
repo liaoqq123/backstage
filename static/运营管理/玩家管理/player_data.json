@@ -1,0 +1,14 @@
+[
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "1", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"},
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "223", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"},
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "2222", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"},
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "432", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"},
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "21", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"},
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "63", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"},
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "7", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"},
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "8", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"},
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "9", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"},
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "11", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"},
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "22", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"},
+  {"uuid": "UUID", "server": "服务器", "ban": "封禁状态", "name": "名字", "lev": "41", "diamond": "仙玉", "coin": "金钱", "mainLev": "主线关卡"}
+]

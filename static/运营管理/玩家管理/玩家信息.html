@@ -21,39 +21,66 @@
       <option value="7">AbC</option>
     </select>
   </div>
-<table class="layui-table" lay-data="{url:'/static/临时数据.json?v=2', page: true, limit: 6, limits:[6]}" id="ID-table-demo-theads-1">
-  <thead>
-    <tr>
-      <th lay-data="{checkbox:true}" rowspan="2"></th>
-      <th lay-data="{field:'uuid', width:80}" rowspan="2">UUID</th>
-      <th lay-data="{field:'server', width:80}" rowspan="2">服务器</th>
-      <th lay-data="{field:'ban', width:180}" rowspan="2">封禁状态</th>
-      <th lay-data="{align:'center'}" colspan="5">基本信息</th>
-      <th lay-data="{align:'center'}" colspan="3">进度信息</th>
-      <th lay-data="{fixed: 'right', width: 160, align: 'center', toolbar: '#templet-demo-theads-tool'}" rowspan="2">操作</th>
-    </tr>
-    <tr>
-      <th lay-data="{field:'name', width:100}">名字</th>
-      <th lay-data="{field:'lev', width:100}">等级</th>
-      <th lay-data="{field:'exp', width:100}">经验</th>
-      <th lay-data="{field:'diamond', width:100}">仙玉</th>
-      <th lay-data="{field:'coin', width:100}">金钱</th>
-      <th lay-data="{field:'mainLev', width:100}">主线关卡</th>
-      <th lay-data="{field:'tower', width:100}">登天路</th>
-      <th lay-data="{field:'sports', width:100}">斗法场积分</th>
+<table class="layui-table" id="test"></table>
 
-    </tr>
-  </thead>
-</table>
-<script type="text/html" id="templet-demo-theads-tool">
-  <div class="layui-clear-space">
-    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="detail">详细信息</a>
-    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="banUser">封禁账号</a>
+<script type="text/html" id="tool">
+  <div class="layui-btn-container">
+    <button type="button" class="layui-btn layui-btn-primary layui-btn-xs"lay-on="test-confirm">详细信息</button>
+    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="banUser" >封禁账号</a>
     <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="notSay">禁言账号</a>
   </div>
 </script>
-
-<!-- 请勿在项目正式环境中引用该 layui.js 地址 -->
-<script src="/static/layui/layui.js"></script>
 </body>
+<script src="/static/layui/layui.js"></script>
+<script>
+layui.use('table', function (){
+    var table = layui.table
+
+    table.render({
+        elem:'#test'
+        ,url:'/static/运营管理/玩家管理/player_data.json'
+        ,method:"get"
+        ,toolbar:true
+        ,cols:[[
+            {type:'checkbox', fixed:'left', width:50},
+            {field:'uuid', title:'UUID', width:120},
+            {field:'server', title:'服务器', width:120},
+            {field:'ban', title:'封禁状态', width:120},
+            {field:'name', title:'名字', width:150},
+            {field:'lev', title:'等级', sort:true, width:80},
+            {field:'diamond', title:'仙玉', sort:true, width:120},
+            {field:'coin', title:'金钱', sort:true, width:120},
+            {field:'mainLev', title:'主线关卡', sort:true, width:120},
+            {field:'sports', title:'操作', toolbar:'#tool', width:250}
+
+        ]]
+        ,parseData:function (res){
+            console.log(res)
+            return{
+                'code':0,
+                'msg':'',
+                'count':res.count,
+                'data':res
+            }
+        }
+
+
+    })
+})
+layui.use(function(){
+    var layer = layui.layer;
+    var util = layui.util;
+  // 事件
+    util.on('lay-on', {
+        "test-confirm": function(){
+      layer.confirm('一个询问框的示例？', {icon: 3}, function(){
+        layer.msg('点击确定的回调', {icon: 1});
+      }, function(){
+        layer.msg('点击取消的回调');
+      });
+    }
+    })
+});
+
+</script>
 </html>

@@ -25,9 +25,9 @@
 
 <script type="text/html" id="tool">
   <div class="layui-btn-container">
-    <button type="button" class="layui-btn layui-btn-primary layui-btn-xs"lay-on="test-confirm">详细信息</button>
-    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="banUser" >封禁账号</a>
-    <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="notSay">禁言账号</a>
+    <button type="button" class="layui-btn layui-btn-primary layui-btn-xs"lay-on="detailed-user">详细信息</button>
+    <button type="button" class="layui-btn layui-btn-primary layui-btn-xs"lay-on="ban-user">封禁账号</button>
+    <button type="button" class="layui-btn layui-btn-primary layui-btn-xs"lay-on="muted-user">禁言账号</button>
   </div>
 </script>
 </body>
@@ -72,12 +72,26 @@ layui.use(function(){
     var util = layui.util;
   // 事件
     util.on('lay-on', {
-        "test-confirm": function(){
+        "detailed-user": function(){
       layer.confirm('一个询问框的示例？', {icon: 3}, function(){
         layer.msg('点击确定的回调', {icon: 1});
       }, function(){
         layer.msg('点击取消的回调');
       });
+    },
+        "ban-user": function(){
+          layer.confirm('一个询问框的示例？', {icon: 3}, function(){
+            layer.msg('点击确定的回调', {icon: 1});
+          }, function(){
+            layer.msg('点击取消的回调');
+          });
+        },
+        "muted-user": function(){
+          layer.confirm('一个询问框的示例？', {icon: 3}, function(){
+            layer.msg('点击确定的回调', {icon: 1});
+          }, function(){
+            layer.msg('点击取消的回调');
+          });
     }
     })
 });
